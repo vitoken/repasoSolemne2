@@ -1,5 +1,7 @@
 <?php
+
 require_once("../lib/db.php");
+include ("../lib/constantes.php");
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,20 +15,32 @@ require_once("../lib/db.php");
  * @author Victor
  */
 class crudAlumno {
+
     function __construct() {
         
     }
-    
+
     // método para insertar, recibe como parámetro un objeto de tipo libro
-		public function insertar($almunos){
-			$db=Db::conectar();
-			$insert=$db->prepare('INSERT INTO alumnos values(NULL,:Dig_alumnos,:Nom_alumnos,:Rut_alumnos)');
-			$insert->bindValue('Dig_alumnos',$almunos->getDig_alumnos());
-			$insert->bindValue('Nom_alumnos',$almunos->getNom_alumnos());
+    public function insertar($almunos) {
+			$db=DBConnect::conexion();
+			$insert=$db->prepare('INSERT INTO alumnos values(:Rut_alumnos,:Dig_alumnos,:Nom_alumnos)');
 			$insert->bindValue('Rut_alumnos',$almunos->getRut_alumnos());
+                        $insert->bindValue('Dig_alumnos',$almunos->getDig_alumnos());
+			$insert->bindValue('Nom_alumnos',$almunos->getNom_alumnos());
 			$insert->execute();
 
-		}
+//        $db = new DBConnect();
+//        $dblink = $db->conexion();
+//
+//        if (!isset($dblink)) {
+//            return false;
+//        }
+//
+//        $PDOst = $dblink->prepare('insert into alumnos values (?,?,?)');
+//
+//        
+//        $PDOst->execute(array($almunos->getRut_alumnos(), $almunos->getDig_alumnos(), $almunos->getNom_alumnos()));
+    }
 
 //		// método para mostrar todos los libros
 //		public function mostrar(){
@@ -78,5 +92,5 @@ class crudAlumno {
 //			$actualizar->bindValue('anio',$libro->getAnio_edicion());
 //			$actualizar->execute();
 //		}
-	}
+}
 ?>

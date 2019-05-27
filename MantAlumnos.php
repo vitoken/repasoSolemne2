@@ -1,6 +1,5 @@
 <?php
 include("lib/constantes.php");
-include("./controladores/contAlumno.php");
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +36,11 @@ and open the template in the editor.
                 <input id="digito" class="form-control" name="digito" type="text" placeholder="Numero o K" required="">
                 <div class="invalid-feedback">Escriba el Digito Verificador</div>
             </div>
+            <input type="hidden" name="insertar" value="insertar">
             <input id="btnenviar" type="submit" value="Enviar">
+            <?php
             
+            ?>
         </form>
         <div id="mensaje"></div>
         <script>
@@ -62,7 +64,6 @@ and open the template in the editor.
              }
         </script>
     </body>
-
 
 
 </html>
