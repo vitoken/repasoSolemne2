@@ -15,13 +15,14 @@ class usuario {
     //put your code here
     private $Usuario;
     private $Clave;
+    private $Nombre;
     
-    
-    function __construct($Usuario, $Clave) {
+    function __construct($Usuario, $Clave, $Nombre) {
         $this->Usuario = $Usuario;
         $this->Clave = $Clave;
+        $this->Nombre = $Nombre;
     }
-    
+
     function getUsuario() {
         return $this->Usuario;
     }
@@ -30,12 +31,20 @@ class usuario {
         return $this->Clave;
     }
 
+    function getNombre() {
+        return $this->Nombre;
+    }
+
     function setUsuario($Usuario) {
         $this->Usuario = $Usuario;
     }
 
     function setClave($Clave) {
         $this->Clave = $Clave;
+    }
+
+    function setNombre($Nombre) {
+        $this->Nombre = $Nombre;
     }
 
 

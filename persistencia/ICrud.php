@@ -26,20 +26,21 @@ class usuarioDAO implements Icrud {
             return false;
         }
 
-        $PDOst = $dblink->prepare('select Usuario, Clave
+        $PDOst = $dblink->prepare('select Nombre
                                  from usuario
                                  where Usuario=? and Clave=?');
 
         $PDOst->execute(array($usuario->getUsuario(), $usuario->getClave()));
 
         if ($row = $PDOst->fetch(PDO::FETCH_OBJ)) {
-            $usuario->setUsuario($row->Usuario);
-            $usuario->setClave($row->Clave);
+            $usuario->setNombre($row->Nombre);
             return true;
         } else {
             return false;
         }
     }
+    
+    
 
 
 }

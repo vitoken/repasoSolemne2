@@ -25,7 +25,7 @@ and open the template in the editor.
             <ul>
                 <li><a class="list-group-item" href="<?=URLBASE;?>"><i class="fa fa-home fa-2x"></i> Menu</a></li>
                 <li><a class="list-group-item" href="<?=URLBASE;?>contenido/HOME.php"><i class="fa fa-sun-o fa-2x"></i>HOME </a></li>
-                <li><a class="list-group-item" href="<?=URLBASE;?>contenido/CambiarClave.php"><i class="fa fa-sun-o fa-2x"></i>Cambiar Clave </a></li>
+                <li><a class="list-group-item" href="<?=URLBASE;?>MantAlumnos.php"><i class="fa fa-sun-o fa-2x"></i>Mantenedor Alumnos </a></li>
                 <li><a class="list-group-item" href="<?=URLBASE;?>contenido/AgregarUsuario.php"><i class="fa fa-birthday-cake fa-2x"></i> Agregar Usuario</a></li>
                 <li><a class="list-group-item" href="<?=URLBASE;?>contenido/LIST RESERVATION.php"><i class="fa fa-birthday-cake fa-2x"></i> LIST RESERVATION</a></li>
             </ul>
@@ -33,7 +33,7 @@ and open the template in the editor.
         
         <?php
             // put your code here
-            echo $_SESSION["Usuario"]->getNomusuario();
+            echo $_SESSION["usuario"]->getNombre();
         ?>
     </body>
 </html>

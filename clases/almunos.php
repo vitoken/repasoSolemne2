@@ -17,6 +17,12 @@ class almunos {
     private $Dig_alumnos;
     private $Nom_alumnos;
     
+    
+       function __construct() {
+        
+    }
+    
+    
     function getRut_alumnos() {
         return $this->rut_alumnos;
     }
@@ -41,10 +47,6 @@ class almunos {
         $this->Nom_alumnos = $Nom_alumnos;
     }
 
-    function __construct($rut_alumnos, $Dig_alumnos, $Nom_alumnos) {
-        $this->rut_alumnos = $rut_alumnos;
-        $this->Dig_alumnos = $Dig_alumnos;
-        $this->Nom_alumnos = $Nom_alumnos;
-    }
-
+    
+    
 }

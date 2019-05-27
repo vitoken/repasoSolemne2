@@ -12,7 +12,7 @@ include ("../persistencia/ICrud.php");
 
 $usuario=$_POST["usuario"];
 $clave=$_POST["clave"];
-$oUsr=new usuario($usuario, $clave);
+$oUsr=new usuario($usuario, $clave, "");
 $dao=new usuarioDAO();
 
 
@@ -21,7 +21,7 @@ var_dump($oUsr->getClave());
 
 
 if($dao->validar($oUsr)){
-    echo "PERFECTO ".$oUsr->getUsuario();
+    echo "PERFECTO ".$oUsr->getNombre();
     $_SESSION["usuario"]=$oUsr;
     echo "<a href=".URLBASE."menu.php />Menu Principal</a>";
 //    echo "<a href=".URLBASE."CambiarClave.php />Cambiar Clave</a>";
